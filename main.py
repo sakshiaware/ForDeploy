@@ -16,7 +16,7 @@ def upload(file: UploadFile = File(...)):
         with open(file.filename, 'wb') as f:
             f.write(contents)
     except Exception as e:
-        e = traceback.format_exc()
+        
         return {"message": "There was an error uploading the file {e}"}
     finally:
         file.file.close()
