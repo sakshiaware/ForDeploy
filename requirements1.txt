@@ -6,7 +6,7 @@ matplotlib
 scikit-image
 tensorflow
 keras
-opencv-python
+opencv-python-headless
 h5py
 imgaug
 IPython[all]
