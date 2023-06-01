@@ -16,7 +16,8 @@ def upload(file: UploadFile = File(...)):
         with open(file.filename, 'wb') as f:
             f.write(contents)
     except Exception:
-        return {"message": "There was an error uploading the file"}
+        e = traceback.format_exc()
+        return {"message": "There was an error uploading the file {e}"}
     finally:
         file.file.close()
     test_model, inference_config = load_inference_model(1, "mask_rcnn_object_0009.h5")
